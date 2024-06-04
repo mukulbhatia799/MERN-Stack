@@ -68,3 +68,15 @@ function Buttons({setCount}) {
     
   </div>
 }
+
+
+/*
+  Ques: Does the context Api
+  1. to make rendering performance great
+  2. to make syntax cleaner/to get rid of prop drilling.
+
+  Ans: to make syntax cleaner/to get rid of prop drilling.
+  Because if we log the statement in child statement of App, they are still rendering. So, (problem with context API is that it doesn't fix re-rendering, only fixes prop drilling which makes syntax cleaner.)
+
+  To get both (rendering performance great) + (to make syntax cleaner/to get rid of prop drilling), we use state management library recoil.
+*/
