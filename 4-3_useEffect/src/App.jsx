@@ -49,7 +49,7 @@ import axios from'axios'
 function App() {
   const [todos, setTodos] = useState([]);
 
-  // This App() will keep getting called. So, to stop fetching the data again and again, we are using useEffect() hook. So, the empty array dependency defines only run the first time when App() renders. Without useEffect(), the fetch() data will stuck in an infinite loop. As, setTodos will keep changing and when state changes then App() gets renders.
+  // This App() will keep getting called. So, to stop fetching the data again and again, we are using useEffect() hook. So, the empty array dependency defines only run the first time when App() renders. Without useEffect(), the fetch() data will stuck in an infinite loop. As, setTodos will keep changing and when state changes, the App() will get rendered.
 
 
   useEffect(() => {
