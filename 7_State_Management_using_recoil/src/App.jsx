@@ -8,9 +8,9 @@ useSetRecoilState
 selector
 */
 
-import { RecoilRoot, useRecoilState, useRecoilValue } from 'recoil'
-import { countAtom } from '../store/atoms/count'
-import { useState } from 'react'
+import { RecoilRoot, useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil'
+import { countAtom, oddSelector } from '../store/atoms/count'
+import { useMemo, useState } from 'react'
 
 function App() {
   return (
@@ -23,20 +23,13 @@ function App() {
   )
 }
 
-function InputData() {
-  const [inputdata, setInputdata] = useState("");   // here we don't need the recoil. Use recoil for global state only. 
-
-  return <div>
-    <input onChange={(e) => {
-      setInputdata(e.target.value);
-    }} />
-  </div>
-}
-
 function Count() {
+  console.log("re-rendered => count()");   // As we can see, that the Count() only rendered once. So, no re-rendering happens.
+  
   return <div>
     <CountRenderer />
     <Buttons />
+    <CheckEvenOrOdd />
   </div>
 }
 
@@ -48,15 +41,45 @@ function CountRenderer() {
 }
 
 function Buttons() {
-  const [count, setCount] = useRecoilState(countAtom);
+  console.log("re-rendered -> buttons()");
+  // const [count, setCount] = useRecoilState(countAtom);
+
+  const setCount = useSetRecoilState(countAtom);    // using useSetRecoilState(), the Buttons() will also not re-render as the count value is not updating here. If we have created count using useRecoilState() then Buttons() will re-render;
+  
   return <div>
     <button onClick={() => {
-      setCount(() => count+1);
+      setCount(count => count+1);
     }}>Increase</button>
     <button onClick={() => {
-      setCount(() => count-1);
+      setCount(count => count-1);
     }}>Decrease</button>
   </div>
 }
+
+function CheckEvenOrOdd() {
+  const isOdd = useRecoilValue(oddSelector);
+  // if(count & 1) {
+  //   return <div>{"It is odd"}</div>
+  // }
+  // better way:- As we need to print only when the count value changed. so, useMemo()
+  return <div>
+    {isOdd ? "It is odd":null}
+  </div>
+}
+
+
+/*
+function InputData() {
+  const [inputdata, setInputdata] = useState("");   // here we don't need the recoil. Use recoil for global state only. 
+
+  return <div>
+    <input onChange={(e) => {
+      setInputdata(e.target.value);
+    }} />
+  </div>
+}
+*/
+
+
 
 export default App
