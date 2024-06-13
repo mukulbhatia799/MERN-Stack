@@ -5,9 +5,9 @@ const Skills = () => {
     const { skills } = data;
     return (
         <>
-            <div className="container">
+            <div className="skills-container">
                 <h1>Technologies</h1>
-                <div className="tech-stack">
+                <div className="skills-tech-stack">
                     {skills.map(tech => {
                         return <DisplayTech key={tech.title} title={tech.title} icon={tech.icon} />
                     })}
@@ -18,8 +18,7 @@ const Skills = () => {
 }
 
 const DisplayTech = ({ title, icon }) => {
-    console.log(`../../icons/${icon}.svg`)
-    return <div className="tech-div">
+    return <div className="skills-tech-div">
         <img src={`../../icons/${icon}.svg`} alt={title} />
         <h1>{title}</h1>
     </div>

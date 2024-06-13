@@ -1,8 +1,8 @@
 import './about.css'
 function About() {
     return (
-        <div className="container-fluid outer-div">
-            <div className="container inner-div">
+        <div className="about-outer-container">
+            <div className="about-inner-container">
                 <h1>About Me</h1>
                 <div className="about-me-content">
                     <img src="" alt="mypic" />

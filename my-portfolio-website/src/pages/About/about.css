@@ -1,12 +1,16 @@
-.outer-div {
+.about-outer-container {
     background-color: white;
     color: black;
     margin-top: 20px;
     margin-bottom: 100px;
+    
 }
 
-.inner-div {
-
+.about-inner-container {
+    margin-left: 200px;
+    margin-right: 200px;
+    display: flex;
+    flex-direction: column;
 }
 
 .first-line {

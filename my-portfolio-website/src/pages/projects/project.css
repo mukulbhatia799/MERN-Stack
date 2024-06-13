@@ -1,0 +1,9 @@
+
+.container {
+    margin-left: 200px;
+}
+
+.project-outer-div {
+    display: grid;
+    gap: 20px;
+}
