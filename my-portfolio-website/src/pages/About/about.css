@@ -1,0 +1,26 @@
+.outer-div {
+    background-color: white;
+    color: black;
+    margin-top: 20px;
+    margin-bottom: 100px;
+}
+
+.inner-div {
+
+}
+
+.first-line {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.para-content p {
+    color: grey;
+}
+
+.about-me-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    margin-top: 25px;
+}

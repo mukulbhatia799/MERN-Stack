@@ -1,0 +1,74 @@
+.container-fluid {
+    background-color: black;
+    color: white;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    margin-left: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.resume-btn {
+    width: 200px;
+    margin-right: 5px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.typewriter-div {
+    font-size: 45px;
+    font-weight: bold;
+    color: orange;
+}
+
+.buttons-div {
+    display: flex;
+    margin-top: 50px;
+}
+
+.download-btn {
+    border-radius: 8px;
+}
+
+.passion-heading {
+    margin-top: 100px;
+}
+
+.social-links {
+    margin-top: 30px;
+    margin-left: 50px;
+    display: flex;
+    gap: 30px;
+}
+
+.linkedin-icon {
+    background-color: #0077B5;
+}
+
+.linkedin-icon:hover {
+    background-color: #073c58;
+}
+
+.github-icon {
+    background-color: #2B3137;
+}
+
+.github-icon:hover {
+    background-color: #16181a;
+}
+
+.icon {
+    font-size: 35px;
+    color: white;
+    border: 1px solid white;
+    padding: 3px;
+}
+
+.icon:hover {
+    transition: 0.5s;
+}
